@@ -1,12 +1,17 @@
-:root{--bg:#f4f8fb;--text:#1a2b3d;--primary:#0f4c81;--card:#fff;--line:#d9e7f3;--muted:#55697c}
+:root{--bg:#f5f8fc;--text:#12253a;--primary:#0d4a7f;--primary2:#2a78b5;--card:#fff;--line:#d6e5f2;--muted:#567089}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-.container{width:min(1100px,92vw);margin:0 auto}.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}.nav h1{font-size:1.1rem;margin:0}
-.btn{background:var(--primary);color:#fff;border:none;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer}
-main{padding:24px 0 48px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 8px 22px #12345612}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.profile ul,.card ul,.card ol{padding-left:18px}.card li{margin-bottom:8px}
-.notice{background:#eaf4ff}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:#e7f0f8;border:1px solid #c8daeb;padding:7px 10px;border-radius:999px;font-weight:600}
-.timeline{display:grid;grid-template-columns:1fr;gap:0}.checklist label{display:block;margin:10px 0}.checklist input{margin-right:8px}
-footer{border-top:1px solid var(--line);background:#fff}.muted{color:var(--muted)}footer p{padding:18px 0;color:var(--muted)}
-@media(max-width:860px){.grid{grid-template-columns:1fr}}
-@media print {.topbar,.btn{display:none}body{background:#fff}.card{box-shadow:none;border:1px solid #ccc}}
+.container{width:min(1120px,92vw);margin:0 auto}.topbar{background:#ffffffd9;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}.nav h1{margin:0;font-size:1.1rem}.nav h1 span{color:var(--primary2)}.nav-actions{display:flex;gap:8px}
+.btn{background:var(--primary);color:#fff;border:none;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer}.btn.ghost{background:#eaf3fb;color:var(--primary)}
+main{padding:22px 0 46px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 10px 24px #15324f12}
+.notice{background:#eaf4ff}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:start}.eyebrow{font-weight:700;color:var(--primary);margin:0 0 8px}.muted{color:var(--muted)}
+.kpis{display:grid;gap:8px}.kpis div{border:1px solid var(--line);padding:10px;border-radius:12px;background:#fbfdff}.kpis strong{display:block}.kpis span{color:var(--muted);font-size:.93rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:#e8f1fa;border:1px solid #c8dced;padding:7px 10px;border-radius:999px;font-weight:600}
+ul,ol{padding-left:18px}li{margin-bottom:8px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+label{font-size:.9rem;color:var(--muted);font-weight:600}input[type="number"],input[type="text"]{width:100%;padding:8px;border:1px solid #c6d8ea;border-radius:8px;margin-top:4px}
+.estimates{background:#f2f8ff;border:1px dashed #b8d2ea;border-radius:12px;padding:10px;margin-top:10px}table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);text-align:left;padding:8px}th{background:#f4f9ff}.small{font-size:.82rem;color:var(--muted)}
+.tree{display:grid;gap:10px}.node{border-left:4px solid var(--primary2);padding:10px 12px;background:#f8fbff;border-radius:8px}.node strong{display:block}.node span{color:var(--muted)}
+.checklist label{display:block;margin:10px 0}footer{border-top:1px solid var(--line);background:#fff}footer p{padding:18px 0;color:var(--muted)}
+@media(max-width:900px){.grid,.hero,.form-grid{grid-template-columns:1fr}.nav-actions .ghost{display:none}}
+@media print {.topbar,.btn{display:none}.card{box-shadow:none;border:1px solid #ccc}body{background:#fff}}

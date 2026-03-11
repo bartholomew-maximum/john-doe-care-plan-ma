@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>John Doe Care Plan v2 | Family Command Center</title>
-  <meta name="description" content="Premium v2 geriatric care plan dashboard for fictional client John Doe. Includes short/long-term roadmap, budget estimator, medication tracker, and escalation decision tree."/>
+  <title>John Doe Care Platform v100 | Family Care OS</title>
+  <meta name="description" content="v100 evolution of a family-facing geriatric care platform for a fictional MA case profile. Includes roadmap and capability matrix from v3 to v100."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,188 +14,63 @@
 <body>
 <header class="topbar">
   <div class="container nav">
-    <h1>John Doe Care Plan <span>v2</span></h1>
-    <div class="nav-actions">
-      <a class="btn ghost" href="#budget">Budget</a>
-      <a class="btn" href="#print">Print Plan</a>
+    <h1>John Doe Care Platform <span>v100</span></h1>
+    <div class="actions">
+      <a class="btn ghost" href="#roadmap">Roadmap</a>
+      <a class="btn" href="#matrix">Version Matrix</a>
     </div>
   </div>
 </header>
 
 <main class="container">
-  <section class="notice card">
-    <strong>Demo profile:</strong> John Doe is a fictional patient profile for planning demonstration only.
+  <section class="card notice">
+    <strong>Demo Notice:</strong> John Doe is a fictional profile for product prototyping only.
   </section>
 
-  <section class="hero card">
+  <section class="card hero">
     <div>
-      <p class="eyebrow">Massachusetts Geriatric Care Plan • Family-Facing Dashboard</p>
-      <h2>Safe at home now. Prepared for what changes next.</h2>
-      <p class="muted">Designed for John’s children to coordinate care quickly, reduce crisis risk, and make confident long-term decisions.</p>
+      <p class="eyebrow">Massachusetts Family Care Management OS</p>
+      <h2>From care plan document to full care-command platform.</h2>
+      <p class="muted">This v100 concept demonstrates a complete product arc from v3 through v100, with operational, clinical, financial, collaboration, automation, and decision intelligence layers.</p>
     </div>
     <div class="kpis">
-      <div><strong>Risk Level</strong><span>Moderate → High (if uncoordinated)</span></div>
-      <div><strong>Primary Goal</strong><span>Avoid avoidable ER/hospital events</span></div>
-      <div><strong>Review Cycle</strong><span>Weekly family huddle + monthly care review</span></div>
+      <div><strong>Current Prototype</strong><span>v100 strategy build</span></div>
+      <div><strong>Version Coverage</strong><span>v3–v100 mapped</span></div>
+      <div><strong>Focus</strong><span>Family outcomes + reduced crisis risk</span></div>
     </div>
   </section>
 
-  <section class="grid profile">
-    <article class="card">
-      <h3>Client Snapshot</h3>
-      <ul>
-        <li><strong>Name:</strong> John Doe</li>
-        <li><strong>Age:</strong> 82</li>
-        <li><strong>Location:</strong> Quincy, MA</li>
-        <li><strong>Status:</strong> Widowed, lives alone in 2-story home</li>
-        <li><strong>Primary concerns:</strong> Mild cognitive decline, fall risk, medication mismanagement, social isolation</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Clinical + Functional Summary</h3>
-      <ul>
-        <li>Hypertension, Type 2 diabetes, osteoarthritis, early-stage dementia</li>
-        <li>2 falls in last 6 months (no major fracture)</li>
-        <li>ADLs: independent feeding/toileting; needs cueing for bathing/dressing</li>
-        <li>IADLs: support needed for meds, transport, finances, meal planning</li>
-      </ul>
-    </article>
+  <section id="roadmap" class="card">
+    <h3>Roadmap Waves (v3 → v100)</h3>
+    <div class="waves" id="waves"></div>
   </section>
 
-  <section class="card">
-    <h3>Primary Goals</h3>
-    <div class="chips">
-      <span>Prevent falls/hospitalization</span>
-      <span>Preserve safe home independence</span>
-      <span>Improve medication adherence</span>
-      <span>Lower caregiver stress</span>
-      <span>Define clear escalation triggers</span>
+  <section id="matrix" class="card">
+    <h3>Version Capability Matrix</h3>
+    <p class="muted">Generated release plan with concrete features for every version from v3 to v100.</p>
+    <div class="toolbar">
+      <input id="search" type="text" placeholder="Filter versions or features (e.g., medication, budget, automation)">
+      <select id="waveFilter"><option value="all">All Waves</option></select>
     </div>
-  </section>
-
-  <section class="timeline">
-    <article class="card">
-      <h3>Short-Term (0–30 Days)</h3>
-      <ol>
-        <li>Home safety upgrades (grab bars, lighting, remove trip hazards)</li>
-        <li>Pharmacy blister packs + locked dispenser + med log</li>
-        <li>PCP follow-up + med reconciliation + PT referral</li>
-        <li>Start home care aide 20–25 hrs/week</li>
-        <li>Family command center (shared calendar + one-pager emergency contacts)</li>
-      </ol>
-    </article>
-    <article class="card">
-      <h3>Mid-Term (30–90 Days)</h3>
-      <ol>
-        <li>Structured routines (hydration, meals, movement, sleep)</li>
-        <li>Adult day health 1–2 days/week</li>
-        <li>Cognitive + mood reassessment</li>
-        <li>Care-hour re-evaluation every 30 days</li>
-        <li>Legal document review (proxy, POA, HIPAA, MOLST discussion)</li>
-      </ol>
-    </article>
-    <article class="card">
-      <h3>Long-Term (3–12 Months)</h3>
-      <ol>
-        <li>Pathway: standard home care → enhanced home care → memory care if required</li>
-        <li>Trigger thresholds monitored monthly</li>
-        <li>Benefits + financing strategy review (VA/LTC/MassHealth consult)</li>
-        <li>Quarterly care conference with PCP + care manager + family</li>
-      </ol>
-    </article>
-  </section>
-
-  <section class="grid">
-    <article class="card" id="budget">
-      <h3>Budget Estimator (Monthly)</h3>
-      <p class="muted">Quick planning model for family budgeting decisions.</p>
-      <div class="form-grid">
-        <label>Care hours / week
-          <input id="hoursWeek" type="number" min="0" value="25">
-        </label>
-        <label>Hourly rate ($)
-          <input id="hourlyRate" type="number" min="0" value="38">
-        </label>
-        <label>Adult day program / month ($)
-          <input id="dayProgram" type="number" min="0" value="500">
-        </label>
-        <label>Medical/transport buffer ($)
-          <input id="buffer" type="number" min="0" value="300">
-        </label>
-      </div>
-      <div class="estimates">
-        <p><strong>Home care labor:</strong> <span id="laborCost">$0</span></p>
-        <p><strong>Total estimated monthly care cost:</strong> <span id="totalCost">$0</span></p>
-      </div>
-    </article>
-
-    <article class="card">
-      <h3>Medication Tracker</h3>
-      <p class="muted">Use this daily with aide/family check-ins.</p>
+    <div class="table-wrap">
       <table>
-        <thead><tr><th>Medication</th><th>Dose</th><th>Time</th><th>Taken?</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>Lisinopril</td><td>10 mg</td><td>8:00 AM</td><td><input type="checkbox" class="med-check"></td><td><input type="text" placeholder="..."></td></tr>
-          <tr><td>Metformin</td><td>500 mg</td><td>8:00 AM / 6:00 PM</td><td><input type="checkbox" class="med-check"></td><td><input type="text" placeholder="..."></td></tr>
-          <tr><td>Acetaminophen PRN</td><td>500 mg</td><td>As needed</td><td><input type="checkbox" class="med-check"></td><td><input type="text" placeholder="Pain level"></td></tr>
-        </tbody>
+        <thead>
+          <tr><th>Version</th><th>Wave</th><th>Primary Focus</th><th>Key Features</th></tr>
+        </thead>
+        <tbody id="versionRows"></tbody>
       </table>
-      <p class="small">Demo data only — verify exact meds with licensed clinicians.</p>
-    </article>
-  </section>
-
-  <section class="card">
-    <h3>Escalation Decision Tree (If-This-Then-That)</h3>
-    <div class="tree">
-      <div class="node">
-        <strong>If:</strong> fall with head strike, chest pain, sudden weakness, or acute confusion
-        <span>Then: call 911 immediately + notify family point person</span>
-      </div>
-      <div class="node">
-        <strong>If:</strong> 2+ falls this quarter OR wandering event OR med refusal >3x/week
-        <span>Then: increase supervision hours within 72h + urgent care-manager reassessment</span>
-      </div>
-      <div class="node">
-        <strong>If:</strong> nighttime confusion escalates for 2+ weeks
-        <span>Then: PCP review + memory-care readiness planning discussion</span>
-      </div>
-      <div class="node">
-        <strong>If:</strong> family burnout signs appear (missed shifts, conflict, stress overload)
-        <span>Then: add respite block + delegate point-person responsibilities for 2 weeks</span>
-      </div>
     </div>
   </section>
 
-  <section class="grid">
-    <article class="card checklist">
-      <h3>Priority Checklist (Children)</h3>
-      <label><input type="checkbox"> Book PCP + med reconciliation this week</label>
-      <label><input type="checkbox"> Complete home safety upgrades in 10 days</label>
-      <label><input type="checkbox"> Start home aide 20+ hrs/week</label>
-      <label><input type="checkbox"> Launch family calendar + comms protocol</label>
-      <label><input type="checkbox"> Schedule legal/advance-care review</label>
-    </article>
-    <article class="card">
-      <h3>Communication Protocol</h3>
-      <ul>
-        <li><strong>Daily:</strong> aide log + med confirmation</li>
-        <li><strong>Weekly:</strong> 20-minute sibling huddle</li>
-        <li><strong>Monthly:</strong> outcomes review (falls, ER visits, mood, weight)</li>
-        <li><strong>Quarterly:</strong> multidisciplinary care conference</li>
-      </ul>
-    </article>
-  </section>
-
-  <section class="card" id="print">
-    <h3>Use Notes</h3>
-    <p>This is a role-play planning template. Final decisions should be individualized with licensed Massachusetts providers.</p>
-    <button class="btn" onclick="window.print()">Print / Save PDF</button>
+  <section class="card">
+    <h3>v100 Flagship Feature Stack</h3>
+    <div class="chips" id="flagship"></div>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <p>Prepared in role-play as an elite MA geriatric care manager • v2 Family Command Center</p>
+    <p>v100 prototype roadmap • fictional clinical case • family-facing product strategy demo</p>
   </div>
 </footer>
 </body>

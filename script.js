@@ -1,37 +1,90 @@
-const careKey = 'john-doe-v2-checks';
-const medKey = 'john-doe-v2-meds';
+const waves = [
+  {name:'Wave 1 (v3-v10)', focus:'Foundation + trust + family workflow'},
+  {name:'Wave 2 (v11-v25)', focus:'Clinical quality + reporting + compliance-ready docs'},
+  {name:'Wave 3 (v26-v40)', focus:'Financial planning + benefits + affordability scenarios'},
+  {name:'Wave 4 (v41-v55)', focus:'Automation + smart escalation + care ops workflows'},
+  {name:'Wave 5 (v56-v70)', focus:'Provider integration + handoff + transitions of care'},
+  {name:'Wave 6 (v71-v85)', focus:'Predictive intelligence + burnout prevention + optimization'},
+  {name:'Wave 7 (v86-v100)', focus:'Full family care OS + decision intelligence + governance'}
+];
 
-const boxes = [...document.querySelectorAll('.checklist input[type="checkbox"]')];
-try {
-  const saved = JSON.parse(localStorage.getItem(careKey) || '[]');
-  boxes.forEach((b, i) => b.checked = !!saved[i]);
-} catch {}
-boxes.forEach(() => {
-  document.addEventListener('change', () => {
-    localStorage.setItem(careKey, JSON.stringify(boxes.map(b => b.checked)));
-  });
+const focusPool = [
+  'Care binder workflow', 'Medication adherence', 'Fall-risk prevention', 'Family collaboration',
+  'Budget forecasting', 'Benefits optimization', 'Automation triggers', 'Provider coordination',
+  'Crisis prevention', 'Decision support', 'Documentation quality', 'Caregiver stress management'
+];
+
+const featurePool = [
+  'Daily visit notes timeline', 'Role-based family access', 'Escalation trigger engine',
+  'Medication tracker with adherence %', 'Monthly cost runway calculator',
+  'Appointment prep briefs', 'Quarterly care conference packets', 'Incident report auto-draft',
+  'Adaptive care-hours recommendation', 'Benefits checklist tracker', 'Care pathway simulator',
+  'Printable emergency one-sheet', 'Sibling huddle agenda generator', 'Risk heatmap dashboard',
+  'Provider message templates', 'Hospital discharge checklist', 'Respite scheduling optimizer',
+  'Tasks + accountability feed', 'Long-term placement readiness score', 'Audit trail + decision log'
+];
+
+const waveForVersion = v => {
+  if (v <= 10) return waves[0].name;
+  if (v <= 25) return waves[1].name;
+  if (v <= 40) return waves[2].name;
+  if (v <= 55) return waves[3].name;
+  if (v <= 70) return waves[4].name;
+  if (v <= 85) return waves[5].name;
+  return waves[6].name;
+};
+
+const versions = [];
+for (let v = 3; v <= 100; v++) {
+  const focus = focusPool[v % focusPool.length];
+  const f1 = featurePool[v % featurePool.length];
+  const f2 = featurePool[(v + 5) % featurePool.length];
+  const f3 = featurePool[(v + 9) % featurePool.length];
+  versions.push({version: `v${v}`, wave: waveForVersion(v), focus, features: [f1,f2,f3]});
+}
+
+const waveContainer = document.getElementById('waves');
+waves.forEach(w => {
+  const el = document.createElement('article');
+  el.className = 'wave';
+  el.innerHTML = `<h4>${w.name}</h4><p>${w.focus}</p>`;
+  waveContainer.appendChild(el);
 });
 
-const inputs = ['hoursWeek','hourlyRate','dayProgram','buffer'].map(id => document.getElementById(id));
-const labor = document.getElementById('laborCost');
-const total = document.getElementById('totalCost');
+const waveFilter = document.getElementById('waveFilter');
+[...new Set(versions.map(v=>v.wave))].forEach(w=>{
+  const o = document.createElement('option'); o.value = w; o.textContent = w; waveFilter.appendChild(o);
+});
 
-function money(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n||0)}
-function calc(){
-  const [h,r,d,b] = inputs.map(i => Number(i?.value || 0));
-  const laborMonthly = h * r * 4.33;
-  const totalMonthly = laborMonthly + d + b;
-  labor.textContent = money(laborMonthly);
-  total.textContent = money(totalMonthly);
+const tbody = document.getElementById('versionRows');
+const search = document.getElementById('search');
+
+function render() {
+  const q = (search.value || '').toLowerCase().trim();
+  const wf = waveFilter.value;
+  const filtered = versions.filter(v => (wf==='all' || v.wave===wf) &&
+    `${v.version} ${v.wave} ${v.focus} ${v.features.join(' ')}`.toLowerCase().includes(q)
+  );
+  tbody.innerHTML = filtered.map(v => `
+    <tr>
+      <td><strong>${v.version}</strong></td>
+      <td>${v.wave}</td>
+      <td>${v.focus}</td>
+      <td>${v.features.map(f=>`• ${f}`).join('<br>')}</td>
+    </tr>
+  `).join('');
 }
-inputs.forEach(i => i?.addEventListener('input', calc));
-calc();
 
-const medChecks = [...document.querySelectorAll('.med-check')];
-try {
-  const savedMeds = JSON.parse(localStorage.getItem(medKey) || '[]');
-  medChecks.forEach((m,i)=>m.checked=!!savedMeds[i]);
-} catch {}
-medChecks.forEach(m=>m.addEventListener('change', ()=>{
-  localStorage.setItem(medKey, JSON.stringify(medChecks.map(x=>x.checked)));
-}));
+search.addEventListener('input', render);
+waveFilter.addEventListener('change', render);
+render();
+
+const flagship = [
+  'Unified family care dashboard', 'Predictive crisis risk scoring', 'Financial runway + benefits engine',
+  'Clinical quality & adherence analytics', 'Provider handoff packet automation', 'Role-based collaboration',
+  'Decision audit trail', 'Escalation intelligence + recommendations'
+];
+const chipWrap = document.getElementById('flagship');
+flagship.forEach(t => {
+  const chip = document.createElement('span'); chip.textContent = t; chipWrap.appendChild(chip);
+});

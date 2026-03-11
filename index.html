@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Doe Care Plan | Family Guide</title>
+  <meta name="description" content="Comprehensive short-term and long-term geriatric care plan for John Doe (fictional case profile) for family caregiver coordination."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <h1>John Doe Care Plan</h1>
+    <a class="btn" href="#print">Print Plan</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="notice card">
+    <strong>Demo profile:</strong> John Doe is a fictional patient created for planning demonstration only.
+  </section>
+
+  <section class="grid profile">
+    <article class="card">
+      <h2>Client Snapshot</h2>
+      <ul>
+        <li><strong>Name:</strong> John Doe</li>
+        <li><strong>Age:</strong> 82</li>
+        <li><strong>Location:</strong> Quincy, MA</li>
+        <li><strong>Status:</strong> Widowed, lives alone in 2-story home</li>
+        <li><strong>Primary concerns:</strong> Mild cognitive decline, fall risk, medication mismanagement, social isolation</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h2>Clinical + Functional Summary</h2>
+      <ul>
+        <li>Hypertension, Type 2 diabetes, osteoarthritis, early-stage dementia</li>
+        <li>2 falls in last 6 months (no major fracture)</li>
+        <li>ADLs: independent in feeding and toileting; needs cueing for bathing/dressing</li>
+        <li>IADLs: requires support for medication setup, transportation, finances, meal planning</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>Primary Goals (Family + Client)</h2>
+    <div class="chips">
+      <span>Prevent hospitalization/falls</span>
+      <span>Maintain home independence safely</span>
+      <span>Improve medication adherence</span>
+      <span>Reduce caregiver stress on adult children</span>
+      <span>Create clear escalation plan</span>
+    </div>
+  </section>
+
+  <section class="timeline">
+    <article class="card">
+      <h2>Short-Term Plan (0–30 Days)</h2>
+      <ol>
+        <li><strong>Safety first (Week 1):</strong> Home safety audit, remove rugs/clutter, install grab bars, night lights, stair rails check.</li>
+        <li><strong>Medication control (Week 1):</strong> Pharmacy blister packs + locked dispenser + family med log.</li>
+        <li><strong>Medical alignment (Week 1-2):</strong> PCP follow-up, medication reconciliation, orthostatic BP check, PT referral for gait/balance.</li>
+        <li><strong>Care coverage (Week 2):</strong> Start 20-25 hrs/week home care aide (AM routines, meals, supervision, companionship).</li>
+        <li><strong>Family command center (Week 2):</strong> Shared caregiver calendar, weekly sibling update, emergency contacts one-pager on fridge.</li>
+      </ol>
+    </article>
+
+    <article class="card">
+      <h2>Mid-Term Plan (30–90 Days)</h2>
+      <ol>
+        <li>Increase structured routine (meals, hydration, exercise, sleep consistency).</li>
+        <li>Enroll in adult day health program 1-2 days/week for stimulation + respite.</li>
+        <li>Formal cognitive and mood check; adjust dementia care approach.</li>
+        <li>Reassess care hours every 30 days based on incidents and caregiver observations.</li>
+        <li>Review legal docs: HCP proxy, HIPAA release, POA, MOLST preferences discussion.</li>
+      </ol>
+    </article>
+
+    <article class="card">
+      <h2>Long-Term Plan (3–12 Months)</h2>
+      <ol>
+        <li><strong>Progressive care pathway:</strong> Home care → enhanced home care → memory care placement trigger if safety fails.</li>
+        <li><strong>Trigger thresholds:</strong> 2+ falls/quarter, wandering event, med refusal >3x/week, nighttime confusion escalation.</li>
+        <li><strong>Financial roadmap:</strong> Estimate monthly cost bands and benefits review (VA, LTC policy, MassHealth planning consult).</li>
+        <li><strong>Quarterly care conference:</strong> Family + geriatric care manager + PCP team.</li>
+      </ol>
+    </article>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>Recommended Care Team</h2>
+      <ul>
+        <li>Geriatric Care Manager (lead coordinator)</li>
+        <li>Primary Care Physician + Nurse</li>
+        <li>Home Health Aide / Companion</li>
+        <li>Physical Therapist (fall prevention)</li>
+        <li>Elder Law Attorney (documents)</li>
+        <li>Family Point Person (oldest daughter as default)</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h2>Family Communication Protocol</h2>
+      <ul>
+        <li><strong>Daily:</strong> aide log + medication confirmation</li>
+        <li><strong>Weekly:</strong> 20-min family huddle (wins, issues, adjustments)</li>
+        <li><strong>Monthly:</strong> outcome review (falls, ER visits, weight, mood)</li>
+        <li><strong>Urgent escalation:</strong> chest pain, acute confusion, head strike, sudden weakness → 911</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="card checklist">
+    <h2>Priority Checklist for John’s Children</h2>
+    <label><input type="checkbox"> Book PCP + medication reconciliation appointment this week</label>
+    <label><input type="checkbox"> Complete home safety modifications within 10 days</label>
+    <label><input type="checkbox"> Interview and start home care aide (minimum 20 hrs/week)</label>
+    <label><input type="checkbox"> Set up family command center (calendar + contact sheet)</label>
+    <label><input type="checkbox"> Schedule legal/advance care planning consult</label>
+  </section>
+
+  <section class="card" id="print">
+    <h2>Use Notes</h2>
+    <p>This plan is intended as a caregiver coordination blueprint and should be individualized with licensed clinical providers in Massachusetts before implementation.</p>
+    <button class="btn" onclick="window.print()">Print / Save PDF</button>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Prepared in role-play as an elite MA geriatric care manager • Family-facing planning site</p>
+  </div>
+</footer>
+</body>
+</html>
